@@ -39,7 +39,7 @@ public class _test_04 {
 
 		for (int i = 0; i < lotto.length; i++) {
 			if (lottoReturn == 1) {
-// 롯또 번호 중복이 발견되면 i 값 재입력
+// 로또 번호 중복이 발견되면 i 값 재입력
 				System.out.println("error) *같은 수를 입력하실 수 없습니다.*");
 				i = i - 1;
 				lottoReturn = 0;
@@ -56,7 +56,7 @@ public class _test_04 {
 			}
 		}
 
-		// 롯또번호 비교
+		// 로또번호 비교
 		for (int i = 0; i < lotto.length; i++) {
 			for (int j = 0; j <= 5; j++) {
 				if (myLotto[j] == lotto[i]) {
@@ -83,3 +83,4 @@ public class _test_04 {
 	}
 
 }
+
