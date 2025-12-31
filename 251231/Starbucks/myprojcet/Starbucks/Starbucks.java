@@ -1,4 +1,4 @@
-package myprojcet;
+package myprojcet.Starbucks;
 
 public class Starbucks implements StarbucksHead{
 	int money = 0;

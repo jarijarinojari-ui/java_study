@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="card"/>
 	<classpathentry kind="src" path="card2"/>
 	<classpathentry kind="src" path="Starbucks"/>
+	<classpathentry kind="src" path="Samsung"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
