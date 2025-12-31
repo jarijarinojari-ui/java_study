@@ -1,5 +1,5 @@
 package StarBucks;
 
-public  class StrabucksHeadOficceBrew {
-	protected abstract void brewing () {};
+public abstract class StrabucksHeadOficceBrew {
+	protected abstract void brewing ();
 }
