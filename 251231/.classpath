@@ -2,6 +2,10 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="251231"/>
+	<classpathentry kind="src" path="car"/>
+	<classpathentry kind="src" path="car2"/>
+	<classpathentry kind="src" path="card"/>
+	<classpathentry kind="src" path="card2"/>
+	<classpathentry kind="src" path="Starbucks"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
