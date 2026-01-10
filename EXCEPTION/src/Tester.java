@@ -2,10 +2,8 @@
 public class Tester {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		new A().a();
-		System.out.println("end");
+		try {new Arithmetic().a();}
+		catch (SamsungException e) {e.printStackTrace();}
+		System.out.println("실행종료");
 	}
-
 }
