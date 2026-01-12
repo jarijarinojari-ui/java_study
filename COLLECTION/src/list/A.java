@@ -1,11 +1,12 @@
 package list;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class A {
 	
 	void a() {
-		ArrayList list = new ArrayList();
+		List list = new ArrayList();//다형성을 사용
 		// 리스트는 순서가있고 중복이 허용이 된다.
 		list.add(10);
 		list.add("Hello");

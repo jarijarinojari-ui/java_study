@@ -1,6 +1,7 @@
 package list;
 
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,6 +9,11 @@ public class B {
 	
 //		List<Fruit> list = new LinkedList<Fruit> ();//다형성을 사용
 	List<Fruit> a(List<Fruit> list){
+		if (list.isEmpty()) list = new LinkedList<Fruit>();
+		Iterator<Fruit> ite = list.iterator();
+		while(ite.hasNext()) {
+			Fruit f = ite.next();
+		}
 		// 리스트는 순서가있고 중복이 허용이 된다.
 //		list.add(10);
 //		list.add("Hello");
