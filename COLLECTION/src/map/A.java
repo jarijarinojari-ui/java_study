@@ -31,6 +31,7 @@ public class A {
 		while (ite2.hasNext()) {
 			HashMap<String, Object> map = ite2.next();
 			Set<String> key = map.keySet(); // 키값 가져오는 메소드
+			System.out.println();
 		}
 		
 		

@@ -22,6 +22,7 @@ public class A {
 		set.add(f3);
 		
 		set.forEach(System.out::println);//람다식
+		set.forEach(item);//람다식
 		
 		Iterator<Fruit> ite = set.iterator();
 		while (ite.hasNext()) {
