@@ -80,19 +80,43 @@ public class MusicPlayer {
 		return musicList;
 	}
 	
-	//음악 삭제
-	public Connection deleteMusic(
-			Connection conn
-			,String musicNum
-			) throws Exception {
-		conn.setAutoCommit(false);
-		StringBuffer sb = new StringBuffer();
-		sb.append(" DELETE FROM MUSIC");
-		sb.append(" WHERE MUSIC_NO =  ?");
-		PreparedStatement stmt = conn.prepareStatement(sb.toString());
-		stmt.setObject(1, musicNum);
-		stmt.executeUpdate();
-		return conn;
+	//음악 기본정보 삭제
+	public Connection deleteMusic(Connection conn, String musicNum) throws Exception {
+	    
+	    conn.setAutoCommit(false); // 트랜잭션 시작
+	    PreparedStatement stmt = null;
+
+	    // -------------------------------------------------------
+	    // 1단계: 자식 테이블 (MUSIC_DETAIL) 먼저 삭제
+	    // -------------------------------------------------------
+	    StringBuffer sbDetail = new StringBuffer();
+	    sbDetail.append(" DELETE FROM MUSIC_DETAIL ");
+	    sbDetail.append(" WHERE MUSIC_NO = ? ");
+
+	    stmt = conn.prepareStatement(sbDetail.toString());
+	    stmt.setObject(1, musicNum);
+	    int detailResult = stmt.executeUpdate(); // 실행! (영향받은 행 개수 반환)
+	    stmt.close(); // 사용한 Statement 닫기
+
+	    System.out.println("상세 정보 삭제 건수: " + detailResult);
+
+
+	    // -------------------------------------------------------
+	    // 2단계: 부모 테이블 (MUSIC) 나중에 삭제
+	    // -------------------------------------------------------
+	    StringBuffer sbMusic = new StringBuffer();
+	    sbMusic.append(" DELETE FROM MUSIC ");
+	    sbMusic.append(" WHERE MUSIC_NO = ? ");
+
+	    stmt = conn.prepareStatement(sbMusic.toString());
+	    stmt.setObject(1, musicNum);
+	    int musicResult = stmt.executeUpdate(); // 실행!
+	    stmt.close();
+
+	    System.out.println("기본 정보 삭제 건수: " + musicResult);
+
+	    // 호출한 곳(UserInterface)에서 commit() 할 수 있도록 conn 반환
+	    return conn; 
 	}
 }
 
