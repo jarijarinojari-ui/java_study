@@ -101,9 +101,9 @@ public class MusicPlayer {
 	    System.out.println("상세 정보 삭제 건수: " + detailResult);
 
 
-	    // -------------------------------------------------------
+	    
 	    // 2단계: 부모 테이블 (MUSIC) 나중에 삭제
-	    // -------------------------------------------------------
+	   
 	    StringBuffer sbMusic = new StringBuffer();
 	    sbMusic.append(" DELETE FROM MUSIC ");
 	    sbMusic.append(" WHERE MUSIC_NO = ? ");
